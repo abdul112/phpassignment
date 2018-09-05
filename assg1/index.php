@@ -45,6 +45,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         else{
             $firstName = checkInput($_POST["firstname"]);
+            $firstName = strtolower($firstName);
+            $firstName = ucfirst($firstName);
             $isOK = true;
         }
     }
@@ -61,6 +63,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         else{
             $lastName = checkInput($_POST["lastname"]);
+            $lastName = strtolower($lastName);
+            $lastName = ucfirst($lastName);
             $isOK = true;
         }
     }
@@ -152,6 +156,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         else{
             $cardHolder = checkInput($_POST["cardHolder"]);
+            $cardHolder = strtolower($cardHolder);
+            $cardHolder = ucwords($cardHolder);
             $isOK = true;
         }
     }
@@ -460,9 +466,9 @@ if ($isOK == false) {
     </div>
 
     <!-- Payment information -->
-<?php
+    <?php
 } else {
-?>
+    ?>
     <div class="container">
         <div class="row">
             <div class="col-sm-12 text-center ">
@@ -526,7 +532,7 @@ if ($isOK == false) {
             </table>
         </div>
     </div>
-<?php
+    <?php
 }
 //}
 ?>
